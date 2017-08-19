@@ -1,0 +1,28 @@
+{% block script %}{% endblock %}
+
+{% block body %}
+<a href="/websocket">リアルタイム通信モード</a>
+
+<!-- to rquest.form['single'] -->
+<form class="" action="/" method="post">
+  <input type="text" name="single" value="あいうえお" placeholder="テキスト">
+  <input type="submit" name="" value="テキストで送信">
+</form>
+
+<!-- to request.form.getlist('list') -->
+<form class="" action="/" method="post">
+  <input type="checkbox" name="list" value="かきくけこ" placeholder="テキスト">かきくけこ
+  <input type="checkbox" name="list" value="さしすせそ" placeholder="テキスト">さしすせそ
+  <input type="submit" name="" value="リストで送信">
+</form>
+
+<!-- html内for文 -->
+{% for v in value_list %}
+<li>{{ v }}</li>
+{% endfor %}
+
+<!-- html内if文 -->
+{% if value_single %}
+<li>{{ value_single }}</li>
+{% endif %}
+{% endblock %}
